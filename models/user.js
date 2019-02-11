@@ -1,20 +1,26 @@
 module.exports = function (sequelize, DataTypes) {
-  var User = sequelize.define("User", {
+  var User = sequelize.define('User', {
+
+    id: {
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
 
     firstName: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
 
     lastName: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
 
-    skill: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+    // skill: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
 
     email: {
       type: DataTypes.STRING,
@@ -24,56 +30,56 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
 
-    image: DataTypes.TEXT,
+    // image: DataTypes.TEXT,
 
-    isLoggedOn: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false
-    },
+    // isLoggedOn: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false,
+    //   defaultValue: false
+    // },
 
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-
-    address: {
-      type: DataTypes.STRING,
       allowNull: false
     },
 
-    address2: {
-      type: DataTypes.STRING,
-    },
+    // address: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
 
-    city: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+    // address2: {
+    //   type: DataTypes.STRING
+    // },
 
-    state: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isUppercase: true
-      }
-    },
+    // city: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
 
-    zip: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // state: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   validate: {
+    //     isUppercase: true
+    //   }
+    // },
 
-    phone: {
-      type: DataTypes.STRING
-    },
+    // zip: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
 
-    personHours: {
-      type: DataTypes.INTEGER,
-      validate: {
-        isInt: true
-      }
-    }
+    // phone: {
+    //   type: DataTypes.STRING
+    // },
+
+    // personHours: {
+    //   type: DataTypes.INTEGER,
+    //   validate: {
+    //     isInt: true
+    //   }
+    // }
   });
   return User;
 };

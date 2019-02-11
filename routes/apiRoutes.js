@@ -1,4 +1,5 @@
 const db = require("../models");
+const path = require("path");
 
 module.exports = function(app) {
   // Get seed data from userdb and render it as json at url: /api/users.  This allows us to use jquery in order to make an ajax call and then render the data into html objects (like a bootstrap media object)

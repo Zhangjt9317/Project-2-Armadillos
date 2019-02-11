@@ -11,6 +11,22 @@ module.exports = function (app) {
   //   res.sendFile(__dirname + '/public/html/index.html');
   // });
 
+  app.get('/signup', (req, res) => {
+    res.render('signup');
+  });
+
+  app.get('/signin', (req, res) => {
+    res.render('signin');
+  });
+
+  app.get('/dashboard', (req, res) => {
+    res.render('dashboard');
+  });
+
+  app.get('/logout', (req, res) => {
+    res.render('logout');
+  });
+
   // Nate sending his media object html to the browser on the route /timeBank
   app.get('/timeBank', (req, res) => {
     res.sendFile(path.join(__dirname, "../public", "/html/available_services.html"));
