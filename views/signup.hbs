@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <form id="signup" name="signup" method="post" action="/signup">
+    {{!-- <form id="signup" name="signup" method="post" action="/signup">
         <label for="email">Email Address</label>
         <input class="text" name="email" type="email" />
         <label for="firstname">Firstname</label>
@@ -16,6 +16,80 @@
         <label for="password">Password</label>
         <input name="password" type="password" />
         <input class="btn" type="submit" value="Sign Up" />
+    </form> --}}
+
+    <form name="signup" id="signup" action='/signup' method="post">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputName">First Name</label>
+                <input type="text" name="firstName" class="form-control" id="inputFirstName" placeholder="First Name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputLastName">Last name</label>
+                <input type="text" name="lastName" class="form-control" id="inputLastName" placeholder="Last name">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputEmail">Email</label>
+                <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Please Re-enter Password</label>
+                <input type="password" name="password2" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" name="address" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" name="address2" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" name="city" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <input type="text" name="state" id="inputState" class="form-control">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" name="zip" class="form-control" id="inputZip">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="inputSkill">Phone</label>
+                <input type="text" name="phone" class="form-control" id="inputPhone">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputSkill">Skill</label>
+                <input type="text" Name="skill" class="form-control" id="inputSkill">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group col-md-12">
+                <div class="custom-file">
+                    <input type="file" name="photo" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose photo</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="g-recaptcha" data-sitekey="6LckmY4UAAAAAEYkHkeeNOGpK5niQ0DfYe0q9CRv"></div>
+        <button id="submitRegister" type="submit" class="btn btn-primary">Submit</button>
+
     </form>
 
 </body>
