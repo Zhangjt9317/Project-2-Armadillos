@@ -8,11 +8,21 @@ $(document).ready(function () {
                 url: "api/users",
                 type: "GET"
             });
+        },
+
+        postUserId: function (id) {
+            return $.ajax({
+
+                url: "api/userupdate/" + id,
+                type: "GET",
+                data: id
+            })
         }
 
     };
     // This runs the getUsers function. Then after the user data has been retrieved we run a callback function in the form of a promise(.then()) that dynamically creates a new bootstrap "media-object" to display each user and the skill(s) they are offering in the time bank.
     API.getUsers().then(function (userData) {
+
         // creates a variable called allUsers and using the jquery .map() method (instead of a forloop) we are creating a new array with all of the user objects in it which we assign to the appropriate html elements using jquery.
         let allUsers = userData.map(function (currentUser) {
 
@@ -30,22 +40,10 @@ $(document).ready(function () {
                 .text(`Skill: ${currentUser.skill}`);
 
             // A solution I found for how to render multiple html elements with jquery to build the contact link: https://stackoverflow.com/questions/747178/how-to-create-multiple-html-elements-with-jquery
-            let accountUpdate = [
-                `<a href="mailto:${currentUser.email}">
-                    <h5 class="navLink" id="accountUpdate">
-                        Account Update
-                    </h5>
-                </a>`
-            ]
+            let accountUpdate = $(`<h5 class="media accountUpdate" data-toggle="modal" data-target="#exampleModal" id=${currentUser.id}>`)
+                .text(`Account Update`)
 
-            // create an update account button couldn't get positioning falling back to clicking on image for contact and turning the contact button into the account update button
-            // let updateAcctBtn = $(`<button>`);
-            //     updateAcctBtn.attr(`class`, `acctBtn`);
-            //     updateAcctBtn.attr(`id`, currentUser.id);
-            //     updateAcctBtn.text(currentUser.id);
-            //     updateAcctBtn.position()
-
-            // this follows the ame pattern as the two lines of code above but the appends the two previous variables to it.
+            // this follows the same pattern as the two lines of code above but the appends the two previous variables to it.
             let mediaBody = $(`<div class="media-body nameSkill" >`)
                 .append(name, skill);
 
@@ -59,20 +57,41 @@ $(document).ready(function () {
             // here we append the users image and the media body which contains their unique name and skill to create the complete media-object 
             let mediaObject = $(`<li class="media" id="mediaObject">`)
                 .append(mediaImage, mediaBody, accountUpdate)
-                
+
 
             // mediaContainer is the container for all of the media-objects so that we have a place to append them all after they are created
             let mediaContainer = $(`<ul class="list-unstyled" id="skillBank">`)
                 .append(mediaObject);
 
-            // media destination is necessary becuase we are using bootstrap rows and columns.  This allows us to control the size and position of the media container on the DOM.
-            let mediaDestination = $(`#centerBody`)
-                .append(mediaContainer);
+            //This allows us to control the size and position of the media container on the DOM.
+            $(`#centerBody`).append(mediaContainer);
+
+            
+            // return currentUser;
 
         })
+        // FIXME: I need to be able to get at this variable to handle account update functionality
+        // return allUsers;
     })
 
+    // console.log(allUsers);
+
+    // This is the event handler for the accountUpdate <h5> created on 
+    $(document).on("click", ".accountUpdate", function (event) {
+        event.preventDefault();
+
+        let id = $(this).attr("id")
+
+        API.postUserId(id).then(function (userToUpdate) {
+            console.log(`the id: ${id} was posted`);
+        })
+        
+        console.log(`you clicked: ${id}`);
+
+            $("#exampleModal").modal("toggle");
+        // });
+
+    });
+
 });
-
-
 
