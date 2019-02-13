@@ -2,13 +2,37 @@ body {
   background-color: black;
   background-image: url("../images/time-wallpaper-23.jpg");
   background-size: 100%;
+  background-position: no-repeat;
+
 }
+
+/* gets rid of blue underline for a tags */
+a:hover{
+  text-decoration: none;
+}
+
 #logo {
   color: white;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
   margin-top: 15px;
+  text-decoration: none;
 }
+
+#logo:hover{
+  color: rgb(127, 208, 255);
+}
+
+.navLink:hover {
+  color: rgb(127, 208, 255);
+}
+
+/* I think in order to change the color of the clock, we need to add a semi transparent colored div over the top of it also I think I broke it becuase it doesn't move anymore... */
+/* #clockBox {
+  color: aqua;
+  text-shadow: .2em;
+} */
+
 iframe {
   display: block;
   margin-left: auto;
@@ -16,16 +40,36 @@ iframe {
   width: 100%;
   margin-top: 46px;
 }
+
 .mt-5, .mt-3 {
   font-size: 22px;
   font-weight: bold;
   color: #b6b5b5;
 }
+
+#loginContainer {
+  margin-top: 9em;
+}
+
+#loginSubmit:hover{
+    background-color: #f700ff;
+}
+
 #loginSubmit {
   margin-left: 70px;
   background-color: #808080;
   border-color: #808080;
+  border-radius: 5em;
 }
+
+#inputUserName{
+  border-radius: 25px;
+}
+
+#inputPassword{
+  border-radius: 25px;
+}
+
 #infoTimeBank {
   margin-top: 46px;
   color: #ffffff;
@@ -33,9 +77,11 @@ iframe {
   width: 100%;
   padding: 20px;
 }
+
 p {
   opacity: 1;
 }
+
 form {
   text-align: center;
 }
@@ -43,59 +89,86 @@ form {
 #navbar {
   text-align: center;
   color: #ffffff;
-  /* border-color: #808080; */
-  /* border: solid; */
-  /* border-width: 2px;  */
 }
 
-#topBar {
-  margin-top: 1.5em;
-  background-color: #ffffff81;
-  border-bottom: solid;
-  border-bottom-width: 0.0625em;
-  border-color: #808080;
-  overflow: auto;
-  z-index: 1;
+#registerLink {
+  margin-top: 2.2em;
 }
 
-#donationButton {
-  margin-top:5%
-}
+/******************************* Skill Bank page (see Index *above* for NavBar) *********************************** */
 
 #skillBank{
-  background-color: #151616a8;
-  /* background-image: url("https://blog.malwarebytes.com/wp-content/uploads/2014/04/photodune-7197630-time-concept-clock-on-digital-background-m.jpg") */
-  /* margin-top: 10%; */
-  border-radius: 0.5em;
+  background-color: transparent;
+  border-radius: 5em;
   color: rgb(236, 233, 233);
 }
 
-.media{
-  margin: 1em;
+#centerBody {
+  overflow: scroll;
+  padding-bottom:36%;
 }
 
+/* jquery media object in availableservices.js */
+#mediaObject{
+  background-color: rgba(19, 19, 19, 0.26);
+  margin: 1em;
+  padding-top: .6em;
+  border: solid .04em white;
+  border-radius: 5em;
+}
+
+/* this affects the top marigin of the media object image  */
 .mr-3{
-  margin: 1em;
+  margin: .5em;
+  margin-bottom: 1em;
+  border-radius: 5em;
 }
 
-.media-body{
+.nameSkill{
   margin: 1em;
+  text-shadow: 5px 5px 2px black;
+  margin-left: 1.2em;
 }
 
 #userImage{
-  width: 4.5em;
-  height: 4.5em;
+  width: 7em;
+  height: 7em;
+  /* box-shadow: 5px 5px 2px #0c1313; */
+  border: solid .05em white;
+  margin-left: 1em;
 }
 
-footer{
-  font-size: large;
-  text-align: center;
-  color: whitesmoke;
-  background-color: rgb(73, 72, 72);
-  padding: 10px;
-  position: relative;
-  width: 100%;
-  bottom: 0;
-  z-index: 4;
-  /* clear: both; */
+#skillText{
+  margin-top: 2.2em;
 }
+
+.accountUpdate{
+  text-decoration: none;
+  color:white;
+  text-shadow: 2px 2px black;
+  border: solid #251125 thin;
+  background-color:rgb(32, 81, 109);
+  margin-top: 1.2em;
+  margin-right: 4em;
+  padding: 0.3em;
+  padding-bottom: 0.5em;
+  border-radius: 1.2em;
+  font-size: .8em;
+  /* box-shadow: 1.4px 1.4px rgba(4, 238, 255, 0.459); */
+  /* margin-right: 5em; */
+}
+
+.accountUpdate:hover{
+  color:rgba(255, 255, 255, 0.87);
+  text-shadow: 2px 2px black;
+  border: solid rgb(7, 164, 255) thin;
+  background-color:rgb(27, 136, 199);
+  /* box-shadow: -1.4px -1.4px rgba(6, 238, 255, 0.411) ; */
+}
+
+/* giving up on this button positioning gets waaay crazy */
+/* .acctBtn {
+  color:red;
+  z-index: 2;
+  position: absolute;
+} */

@@ -1,65 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+
     <title>TimeBanker</title>
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="../styles/styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet">
-    <!-- Google API recaptcha -->
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
 </head>
 
 <body>
     <br>
-    <!-- NAvbar -->
+    <!-- Navbar -->
     <div class="row" id="navbar">
+
         <div class="col-md-2">
+
             <a href="./howitworks.html">
-                <h5 class="mt-5">How It Works</h5>
+                <h5 class="mt-5 navLink">How It Works</h5>
             </a>
+
         </div>
+
         <div class="col-md-2">
+
             <div class="media" data-toggle="modal" data-target="#registerModal">
-                <div class="media-body">
-                    <h5 class="mt-3">Register</h5>
+
+                <div class="media-body" id="registerLink">
+                    <h5 class="mt-3 navLink">Register</h5>
                 </div>
+
             </div>
+
         </div>
+
         <div class="col-md-4">
+
             <div class="navbar navbar-expand-lg navbar-light">
                 <div class="col-lg-12 text-center" id="topCenter">
                     <a href="../html/index.html">
-                        <h1 id="logo" class="mt-4">TIME<img src="../images/clock.gif" width="50" height="50">BANKER</h1>
+
+                        <h1 id="logo" class="mt-4 navLink">TIME
+                            <img id="clock" src="../images/clock.gif" width="50" height="50">
+                            <span> BANKER</span>
+                        </h1>
+
                     </a>
                 </div>
             </div>
 
         </div>
+
         <div class="col-md-2">
             <a href="mailto:webmaster@example.com">
-                <h5 class="mt-5">Contact us</h5>
+                <h5 class="mt-5 navLink">Contact us</h5>
             </a>
         </div>
+
         <div class="col-md-2">
-            <h5 class="mt-5">Donate</h5>
+            <h5 class="mt-5 navLink">Donate</h5>
         </div>
+
     </div>
 
     <!-- Info about Timebank -->
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div id="infoTimeBank">
+                <!-- <div id="infoTimeBank">
                     <p>A time bank is a reciprocity-based work trading system in which hours are the
                         currency. With time banking, a person with one skill set can bank and trade hours of work for
                         equal
@@ -85,22 +99,16 @@
                         administration.
                         Cahn said he created the system as a way to reward “decency, caring and a passion for justice.”</p>
                     <p>This video describes the time bank concept and how it works:</p>
-                </div>
+                </div> -->
                 <div class="container rounded mx-auto d-block">
                     <iframe width="760" height="515" src="https://www.youtube.com/embed/aB8ifVJ34JU" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </div>
             </div>
         </div>
 
     </div>
-
-    <div class="row">
-        <footer>
-            <h6>Copyright &copy;</h6>
-        </footer>
-    </div>
-
 
     <!-- This rgister form modal -->
     <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -138,7 +146,8 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Please Re-enter Password</label>
-                                <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password">
+                                <input type="password" class="form-control" id="inputConfirmPassword"
+                                    placeholder="Confirm Password">
                             </div>
                         </div>
                         <div class="form-group">
@@ -147,7 +156,8 @@
                         </div>
                         <div class="form-group">
                             <label for="inputAddress2">Address 2</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                            <input type="text" class="form-control" id="inputAddress2"
+                                placeholder="Apartment, studio, or floor">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -176,7 +186,8 @@
                         <div class="row">
                             <div class="input-group col-md-12">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                        aria-describedby="inputGroupFileAddon01">
                                     <label class="custom-file-label" for="inputGroupFile01">Choose photo</label>
                                 </div>
                             </div>

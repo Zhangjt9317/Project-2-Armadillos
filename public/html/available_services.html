@@ -3,123 +3,128 @@
 
 <head>
     <meta charset="UTF-8">
+
     <title>TimeBanker</title>
-    <!-- Latest compiled and minified CSS & JS -->
+
+    <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- GoogleFonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet">
 </head>
 
 <body>
-    <div class="row" id="topBar">
 
-        <div class="col-lg-4 col-med-0 col-sm-0" id="topLeft">
-            <!-- empty for formatting -->
+    <!-- This is the Modal for the account update button -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <!-- Navbar -->
+    <div class="row" id="navbar">
+
+        <div class="col-lg-2 col-md-2 col-sm-2">
+
+            <a href="./howitworks.html">
+                <h5 class="mt-5 navLink">How It Works</h5>
+            </a>
+
         </div>
 
-        <div class="col-lg-4 col-med-0 col-sm-0 text-center" id="topCenter">
+        <div class="col-lg-2 col-md-2 col-sm-2">
 
-            <h1 id="title">
-                TIME BANKER
-            </h1>
+            <div class="media" data-toggle="modal" data-target="#registerModal">
+
+                <div class="media-body" id="registerLink">
+                    <h5 class="mt-3 navLink">Register</h5>
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="col-lg-4 col-med-0 col-sm-0 text-center" id="topLeft">
-            <button id="donationButton">Update Person Hours</button>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+
+            <div class="navbar navbar-expand-lg navbar-light">
+                <div class="col-lg-12 text-center" id="topCenter">
+                    <a href="../html/index.html">
+
+                        <h1 id="logo" class="mt-4 navLink">TIME
+                            <img id="clock" src="../images/clock.gif" width="50" height="50">
+                            <span> BANKER</span>
+                        </h1>
+
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <a href="mailto:webmaster@example.com">
+                <h5 class="mt-5 navLink">Contact us</h5>
+            </a>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <h5 class="mt-5 navLink">Donate</h5>
         </div>
 
     </div>
 
     <div class="row" id="body">
 
-        <div class="col-lg-2 col-med-0 col-sm-0" id="leftBody">
+        <div class="col-lg-1 col-med-0 col-sm-0" id="leftBody">
             <!-- EMPTY -->
         </div>
 
-        <div class="col-lg-8 col-med-0 col-sm-0" id="centerBody">
+        <div class="col-lg-4 col-med-12 col-sm-12 pre-scrollable" id="centerBody">
             <ul class="list-unstyled" id="skillBank">
-                <!-- <li class="media" data-toggle="modal" data-target="#emailModal" data-whatever="user@mail">
-                    <img src="https://www.placecage.com/75/75" class="mr-3" alt="...">
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1">Nicholas Cage</h5>
-                        <p>
-                            Skill: Acting
-                        </p>
-                    </div>
-                </li>
-                <a href=""></a>
-                <li class="media" data-toggle="modal" data-target="#emailModal" data-email="@mdo">
-                    <img src="https://www.fillmurray.com/75/75" class="mr-3" alt="...">
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1">Bill Murray</h5>
-                        <p>
-                            Skill: Acting
-                        </p>
-                    </div>
-                </li>
-                <li class="media" data-toggle="modal" data-target="#emailModal" data-whatever="@mdo">
-                    <img src="https://placekitten.com/75/75" class="mr-3" alt="...">
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1">Kitten</h5>
-                        <p>
-                            Skill: Cuddling/attacking feet from under the bed.
-                        </p>
-                    </div>
-                </li> -->
+
             </ul>
         </div>
 
-        <div class="col-lg-2 col-med-0 col-sm-0" id="leftBody">
+        <div class="col-lg-0 col-med-0 col-sm-0" id="rightBody">
             <!-- EMPTY -->
         </div>
 
     </div>
 
-    <div class="row">
+    <!-- Bootstrap js files -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
-        <div class="col-12">
-
-            <footer>
-                contact us
-            </footer>
-
-        </div>
-
-    </div>
-
-    <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Recipient:</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="sendMessage">Submit Time Request</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<script src="../js/availableServices.js"></script>
+    <!-- custom js file -->
+    <script src="../js/availableServices.js"></script>
 </body>
 
 
