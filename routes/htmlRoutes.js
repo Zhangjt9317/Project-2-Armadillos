@@ -21,7 +21,8 @@ module.exports = function (app) {
   });
 
   app.get('/dashboard', (req, res) => {
-    res.render('dashboard');
+    // res.render('dashboard');
+    res.sendFile(path.join(__dirname, "../public", "/html/available_services.html"));
   });
 
    // Nate sending his media object html to the browser on the route /timeBank
@@ -61,8 +62,8 @@ module.exports = function (app) {
     });
 
     // Render 404 page for any unmatched routes
-    // app.get("*", function (req, res) {
-    //   res.send("thing!")
-    //   // res.render("404");
-    // });
+    app.get("*", function (req, res) {
+      //res.send("thing!")
+      res.render("404");
+    });
   };

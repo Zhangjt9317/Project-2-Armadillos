@@ -17,10 +17,10 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: true
     },
 
-    // skill: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false
-    // },
+    skill: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
 
     email: {
       type: DataTypes.STRING,
@@ -30,56 +30,61 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
 
-    // image: DataTypes.TEXT,
+    image: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
 
-    // isLoggedOn: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: false,
-    //   defaultValue: false
-    // },
+    isLoggedOn: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    },
 
     password: {
       type: DataTypes.STRING,
       allowNull: false
     },
 
-    // address: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false
-    // },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
 
-    // address2: {
-    //   type: DataTypes.STRING
-    // },
+    address2: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
 
-    // city: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false
-    // },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
 
-    // state: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   validate: {
-    //     isUppercase: true
-    //   }
-    // },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        isUppercase: true
+      }
+    },
 
-    // zip: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false
-    // },
+    zip: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
 
-    // phone: {
-    //   type: DataTypes.STRING
-    // },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
 
-    // personHours: {
-    //   type: DataTypes.INTEGER,
-    //   validate: {
-    //     isInt: true
-    //   }
-    // }
+    personHours: {
+      type: DataTypes.INTEGER,
+      validate: {
+        isInt: true
+      }
+    }
   });
   return User;
 };
