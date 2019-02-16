@@ -3,7 +3,7 @@ var app = express()
 var passport = require('passport')
 var session = require('express-session')
 var bodyParser = require('body-parser')
-var env = require('dotenv').load()
+var env = require('dotenv').load();
 var exphbs = require('express-handlebars')
 
 //For BodyParser
@@ -53,7 +53,7 @@ app.post("/subscribe", (req, res) => {
     if (body.success !== undefined && !body.success) {
       return res.json({ "success": false, "msg": "Failed captcha" });
     }
-    
+
     return res.json({ "success": true, "msg": "Successful captcha" });
 
   });
@@ -64,7 +64,7 @@ var models = require("./models");
 
 //Routes
 var authRoute = require('./routes/auth.js')(app, passport);
-var apiRoute =require("./routes/apiRoutes")(app, passport);
+var apiRoute = require("./routes/apiRoutes")(app, passport);
 var htmlRoute = require("./routes/htmlRoutes")(app, passport);
 
 //load passport strategies
