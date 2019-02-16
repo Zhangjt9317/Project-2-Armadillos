@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "yikes",
+    "password": "pass",
     "database": "userdb",
     "host": "localhost",
     "port": 3306,
@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "yikes",  
+    "password": "pass",  
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
