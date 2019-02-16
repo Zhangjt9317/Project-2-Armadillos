@@ -1,4 +1,4 @@
-//load bcrypt
+//load bcrypt for password encryption
 var bCrypt = require('bcrypt-nodejs');
 
 
@@ -10,16 +10,10 @@ module.exports = function (passport, user) {
     passport.use('local-signup', new LocalStrategy(
 
         {
-
             usernameField: 'email',
-
             passwordField: 'password',
-
             passReqToCallback: true // allows us to pass back the entire request to the callback
-
         },
-
-
 
         function (req, email, password, done) {
 
@@ -28,8 +22,6 @@ module.exports = function (passport, user) {
                 return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
 
             };
-
-
 
             User.findOne({
                 where: {
@@ -40,7 +32,7 @@ module.exports = function (passport, user) {
                 if (user) {
 
                     return done(null, false, {
-                        message: 'That email is already taken'
+                        message: 'That email is already taken' //This msg doesn't show up?
                     });
 
                 } else {
@@ -56,7 +48,25 @@ module.exports = function (passport, user) {
 
                         firstName: req.body.firstName,
 
-                        lastName: req.body.lastName
+                        lastName: req.body.lastName,
+
+                        skill: req.body.skill,
+
+                        image: req.body.image,
+
+                        address: req.body.address,
+
+                        address2: req.body.address2,
+
+                        city: req.body.city,
+
+                        state: req.body.state,
+
+                        zip: req.body.zip,
+
+                        phone: req.body.phone,
+
+                        personHours: req.body.personHours
 
                     };
 
@@ -75,13 +85,9 @@ module.exports = function (passport, user) {
                             return done(null, newUser);
 
                         }
-
                     });
-
                 }
-
             });
-
         }
 
     ));
@@ -113,9 +119,7 @@ module.exports = function (passport, user) {
     });
 
     //LOCAL SIGNIN
-passport.use('local-signin', new LocalStrategy(
-
-    {
+passport.use('local-signin', new LocalStrategy(    {
 
         // by default, local strategy uses username and password, we will override with email
 
@@ -148,7 +152,9 @@ passport.use('local-signin', new LocalStrategy(
             if (!user) {
 
                 return done(null, false, {
+                    alert("Oops");
                     message: 'Email does not exist'
+                    alert("Oops");
                 });
 
             }
@@ -175,10 +181,8 @@ passport.use('local-signin', new LocalStrategy(
             });
 
         });
-
-
     }
 
-));
+  ));
 
-}
+};

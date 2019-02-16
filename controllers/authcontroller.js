@@ -13,6 +13,13 @@ exports.signin = function (req, res) {
 
 };
 
+exports.timebank = function (req, res) {
+
+  res.render('timebank');
+
+};
+
+
 exports.dashboard = function (req, res) {
 
   res.render('dashboard');
