@@ -22,6 +22,10 @@ module.exports = function (app) {
 
   });
 
+  app.get("api/test/:id", function (req, res) {
+    console.log(`test, id: ${req.params.id}`);
+  });
+
   // Create a new example
   // app.post("/api/examples", function(req, res) {
   //   db.Example.create(req.body).then(function(dbExample) {

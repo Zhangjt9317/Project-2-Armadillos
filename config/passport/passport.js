@@ -152,9 +152,9 @@ passport.use('local-signin', new LocalStrategy(    {
             if (!user) {
 
                 return done(null, false, {
-                    alert("Oops");
+                    //alert("Oops");
                     message: 'Email does not exist'
-                    alert("Oops");
+                    //alert("Oops");
                 });
 
             }
