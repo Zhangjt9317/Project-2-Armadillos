@@ -10,7 +10,7 @@ The purpose of this project is to present members of a neighborhood or community
 
 ## How it Works
 
-On the Home Page users can register (using the Register modal) and once they're registered, they can log into use TimeBanker. When logged in users can update their accounts by hitting the account update button.
+On the Home Page users can register (using the Register modal) and once they're registered, they can log into use TimeBanker. When logged in users can update their accounts by hitting the account update button. This is where they can make deposits and withdrawls of service hours.
 
 ## Built With
 
